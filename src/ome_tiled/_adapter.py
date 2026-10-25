@@ -4,7 +4,11 @@ import logging
 from typing import TYPE_CHECKING, Any
 
 import zarr
-from tiled.adapters.zarr import ZarrArrayAdapter, ZarrGroupAdapter
+from tiled.adapters.zarr import (
+    ZarrArrayAdapter,
+    ZarrGroupAdapter,
+    dims_from_zarr_array,
+)
 from tiled.structures.array import ArrayStructure
 from tiled.utils import path_from_uri
 from zarr.errors import GroupNotFoundError
@@ -68,7 +72,9 @@ def open_path(
     if isinstance(image, NgffImage):
         return open_image(node, image, structure=structure, **kwargs)
     return ZarrArrayAdapter(
-        node, structure or ArrayStructure.from_array(node), **kwargs
+        node,
+        structure or ArrayStructure.from_array(node, dims=dims_from_zarr_array(node)),
+        **kwargs,
     )
 
 

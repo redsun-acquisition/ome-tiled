@@ -118,7 +118,9 @@ def bioformats2raw_store(data_dir: Path) -> Path:
 @pytest.fixture
 def plain_zarr_store(data_dir: Path) -> Path:
     path = data_dir / "plain.zarr"
-    zarr.open_group(path, mode="w").create_array("frames", shape=(4,), dtype="u1")
+    zarr.open_group(path, mode="w").create_array(
+        "frames", shape=(4,), dtype="u1", dimension_names=("frame",)
+    )
     return path
 
 
@@ -164,6 +166,8 @@ def write_by_hand(
 ) -> Path:
     group = zarr.open_group(path, mode="w", zarr_format=zarr_format)
     group.attrs.update(attributes)
+    # no dimension_names: tiled's own adapter would read them, and a test
+    # registering this array by path would pass without this package
     group.create_array("0", shape=(2, 3, 8, 8), dtype="uint16")[:] = 1
     return path
 

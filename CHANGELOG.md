@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Dates are specified in the format `DD-MM-YYYY`.
 
+## [0.2.1] - 25-10-2026
+
+### Added
+
+- Support for Python 3.14.
+
+### Changed
+
+- `ome-tiled` requires `tiled>=0.2.20` and `yaozarrs>=0.3.4`, and its
+  `bluesky` extra requires `bluesky-tiled-plugins>=2.0.12`.
+
+### Fixed
+
+- `OmeZarrAdapter` keeps the axis names an array records in
+  `dimension_names` or `_ARRAY_DIMENSIONS` when the array is not part of an
+  OME-Zarr image, as `tiled`'s own Zarr adapter does.
+
 ## [0.2.0] - 18-09-2026
 
 ### Added
@@ -36,6 +53,7 @@ Dates are specified in the format `DD-MM-YYYY`.
 
 Initial release.
 
-[0.2.0]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.1...0.2.0
-[0.1.1]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.0...0.1.1
+[0.2.1]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/redsun-acquisition/ome-tiled/tree/v0.1.0
