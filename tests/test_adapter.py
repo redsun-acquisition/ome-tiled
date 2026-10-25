@@ -130,6 +130,14 @@ def test_unsupported_group_is_served_as_plain_zarr_and_logged(
     assert logged in caplog.text
 
 
+def test_array_outside_an_image_keeps_its_recorded_names(
+    plain_zarr_store: Path,
+) -> None:
+    adapter = OmeZarrAdapter.from_uris(plain_zarr_store.as_uri() + "/frames")
+
+    assert adapter.structure().dims == ("frame",)
+
+
 @pytest.mark.usefixtures("acquire_zarr_store", "ome_writers_acquire_zarr_store")
 def test_detection_hook_routes_every_ome_zarr_store(
     client: Container, data_dir: Path
@@ -161,7 +169,7 @@ def test_extension_route_misses_a_store_named_zarr(
     )
 
     assert client["acquire"].structure().dims == FOUR_DIMS
-    assert client["run"]["det"].structure_family == StructureFamily.container
+    assert client["run"].data_sources()[0].mimetype != OME_ZARR_MIMETYPE
 
 
 def test_embedded_server_reads_images_once_the_adapter_is_inserted(

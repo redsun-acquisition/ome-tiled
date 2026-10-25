@@ -118,7 +118,9 @@ def bioformats2raw_store(data_dir: Path) -> Path:
 @pytest.fixture
 def plain_zarr_store(data_dir: Path) -> Path:
     path = data_dir / "plain.zarr"
-    zarr.open_group(path, mode="w").create_array("frames", shape=(4,), dtype="u1")
+    zarr.open_group(path, mode="w").create_array(
+        "frames", shape=(4,), dtype="u1", dimension_names=("frame",)
+    )
     return path
 
 
