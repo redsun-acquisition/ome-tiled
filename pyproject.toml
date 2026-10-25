@@ -19,15 +19,15 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    # no 3.14 until tiled installs there: https://github.com/bluesky/tiled/issues/1144
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
     "License :: OSI Approved :: Apache Software License",
 ]
 license = { text = "Apache-2.0" }
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.11"
 dependencies = [
-    "tiled[server]>=0.2.18",
-    "yaozarrs>=0.3.2",
+    "tiled[server]>=0.2.20",
+    "yaozarrs>=0.3.4",
     "zarr>=3.1.6",
 ]
 
@@ -38,7 +38,7 @@ homepage = "https://github.com/redsun-acquisition/ome-tiled"
 
 [project.optional-dependencies]
 bluesky = [
-    "bluesky-tiled-plugins>=2.0.11",
+    "bluesky-tiled-plugins>=2.0.12",
 ]
 
 [tool.hatch.version]
@@ -94,7 +94,7 @@ ignore = ["D100", "D104"]
 convention = "numpy"
 
 [tool.tox]
-requires = ["tox>=4.28", "tox-uv-bare>=1.36"]
+requires = ["tox>=4.28", "tox-uv-bare>=1.37"]
 env_list = ["lint", "mypy", "tests"]
 
 [tool.tox.env_run_base]
@@ -125,13 +125,13 @@ addopts = "-p no:warnings"
 [dependency-groups]
 dev = [
     "acquire-zarr>=0.10.0",
-    "bluesky-tiled-plugins>=2.0.11",
-    "coverage>=7.16.1",
+    "bluesky-tiled-plugins>=2.0.12",
+    "coverage>=7.17.0",
     "event-model>=1.24.0",
-    "mypy>=2.3.1",
+    "mypy>=2.4.0",
     "ome-writers[acquire-zarr,zarr-python]>=0.3.2",
-    "prek>=0.5.3",
+    "prek>=0.5.7",
     "pytest>=9.1.1",
-    "ruff>=0.16.8",
-    "tox-uv-bare>=1.36.0",
+    "ruff>=0.17.2",
+    "tox-uv-bare>=1.37.0",
 ]

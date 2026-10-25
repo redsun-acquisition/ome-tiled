@@ -161,7 +161,7 @@ def test_extension_route_misses_a_store_named_zarr(
     )
 
     assert client["acquire"].structure().dims == FOUR_DIMS
-    assert client["run"]["det"]["0"].structure().dims is None
+    assert client["run"]["det"].structure_family == StructureFamily.container
 
 
 def test_embedded_server_reads_images_once_the_adapter_is_inserted(
