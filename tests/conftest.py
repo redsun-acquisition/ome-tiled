@@ -166,6 +166,8 @@ def write_by_hand(
 ) -> Path:
     group = zarr.open_group(path, mode="w", zarr_format=zarr_format)
     group.attrs.update(attributes)
+    # no dimension_names: tiled's own adapter would read them, and a test
+    # registering this array by path would pass without this package
     group.create_array("0", shape=(2, 3, 8, 8), dtype="uint16")[:] = 1
     return path
 

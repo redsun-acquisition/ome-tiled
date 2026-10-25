@@ -171,8 +171,9 @@ tox.
 - **Falsify a test before trusting it.** A test asserting `dims` must fail
   with this package's adapter replaced by `tiled`'s `ZarrAdapter`: in
   `adapters_by_mimetype` for a group path, where the adapter opens the image at
-  read time, and in the registration for an array path, where only the stored
-  structure carries the names.
+  read time, and in the registration for an array path, which only the
+  hand-written fixtures falsify: they record no `dimension_names`, so the
+  stored structure is the only place the names come from.
 - A property only a type checker can observe is tested in `tests/typing/` with
   `typing.assert_type`, in a module pytest never collects.
 
