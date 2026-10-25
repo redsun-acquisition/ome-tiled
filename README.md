@@ -7,9 +7,10 @@
 
 # ome-tiled
 
-An adapter for [`tiled`](https://github.com/bluesky/tiled) that serves OME-Zarr
-images as arrays with their axis names, which `tiled`'s own Zarr adapter
-leaves out.
+An adapter for [`tiled`](https://github.com/bluesky/tiled) that serves each
+OME-Zarr image as one array with its axis names. `tiled`'s own Zarr adapter
+serves the image as a group of resolution levels, and names the axes only
+where each array records them itself.
 
 ## Install
 
