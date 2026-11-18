@@ -26,7 +26,7 @@ classifiers = [
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
 dependencies = [
-    "tiled[server]>=0.2.20",
+    "tiled[server]>=0.2.22",
     "yaozarrs>=0.3.4",
     "zarr>=3.1.6",
 ]
