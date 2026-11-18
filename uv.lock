@@ -3365,9 +3365,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bluesky-tiled-plugins", marker = "extra == 'bluesky'", specifier = ">=2.0.12" },
+    { name = "bluesky-tiled-plugins", marker = "extra == 'bluesky'", specifier = ">=2.0.14" },
     { name = "tiled", extras = ["server"], specifier = ">=0.2.22" },
-    { name = "yaozarrs", specifier = ">=0.3.4" },
+    { name = "yaozarrs", specifier = ">=0.4.1" },
     { name = "zarr", specifier = ">=3.1.6" },
 ]
 provides-extras = ["bluesky"]
@@ -3375,15 +3375,15 @@ provides-extras = ["bluesky"]
 [package.metadata.requires-dev]
 dev = [
     { name = "acquire-zarr", specifier = ">=0.10.0" },
-    { name = "bluesky-tiled-plugins", specifier = ">=2.0.12" },
-    { name = "coverage", specifier = ">=7.17.0" },
+    { name = "bluesky-tiled-plugins", specifier = ">=2.0.14" },
+    { name = "coverage", specifier = ">=7.17.3" },
     { name = "event-model", specifier = ">=1.24.0" },
-    { name = "mypy", specifier = ">=2.4.0" },
+    { name = "mypy", specifier = ">=2.4.1" },
     { name = "ome-writers", extras = ["acquire-zarr", "zarr-python"], specifier = ">=0.3.2" },
-    { name = "prek", specifier = ">=0.5.7" },
-    { name = "pytest", specifier = ">=9.1.1" },
-    { name = "ruff", specifier = ">=0.17.2" },
-    { name = "tox-uv-bare", specifier = ">=1.37.0" },
+    { name = "prek", specifier = ">=0.5.11" },
+    { name = "pytest", specifier = ">=9.2.0" },
+    { name = "ruff", specifier = ">=0.17.5" },
+    { name = "tox-uv-bare", specifier = ">=1.37.9" },
 ]
 
 [[package]]
