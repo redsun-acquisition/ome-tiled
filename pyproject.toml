@@ -27,7 +27,7 @@ license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
 dependencies = [
     "tiled[server]>=0.2.22",
-    "yaozarrs>=0.3.4",
+    "yaozarrs>=0.4.1",
     "zarr>=3.1.6",
 ]
 
@@ -38,7 +38,7 @@ homepage = "https://github.com/redsun-acquisition/ome-tiled"
 
 [project.optional-dependencies]
 bluesky = [
-    "bluesky-tiled-plugins>=2.0.12",
+    "bluesky-tiled-plugins>=2.0.14",
 ]
 
 [tool.hatch.version]
@@ -125,13 +125,13 @@ addopts = "-p no:warnings"
 [dependency-groups]
 dev = [
     "acquire-zarr>=0.10.0",
-    "bluesky-tiled-plugins>=2.0.12",
-    "coverage>=7.17.0",
+    "bluesky-tiled-plugins>=2.0.14",
+    "coverage>=7.17.3",
     "event-model>=1.24.0",
-    "mypy>=2.4.0",
+    "mypy>=2.4.1",
     "ome-writers[acquire-zarr,zarr-python]>=0.3.2",
-    "prek>=0.5.7",
-    "pytest>=9.1.1",
-    "ruff>=0.17.2",
-    "tox-uv-bare>=1.37.0",
+    "prek>=0.5.11",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+    "tox-uv-bare>=1.37.9",
 ]
