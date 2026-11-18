@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Dates are specified in the format `DD-MM-YYYY`.
 
+## [0.2.2] - 18-11-2026
+
+### Changed
+
+- `ome-tiled` requires `tiled>=0.2.22` and `yaozarrs>=0.4.1`, and its
+  `bluesky` extra requires `bluesky-tiled-plugins>=2.0.14`.
+
 ## [0.2.1] - 25-10-2026
 
 ### Added
@@ -53,6 +60,7 @@ Dates are specified in the format `DD-MM-YYYY`.
 
 Initial release.
 
+[0.2.2]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/redsun-acquisition/ome-tiled/compare/v0.1.0...v0.1.1
